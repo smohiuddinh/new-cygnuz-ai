@@ -11,16 +11,16 @@ interface FeaturesContent {
 }
 
 const defaultContent: FeaturesContent = {
-  title: "What makes us the best studio for you.",
-  subtitle: "Discover our unique approach to 3D animation",
+  title: "Why Cygnuz AI is the best AI automation partner.",
+  subtitle: "Discover our unique AI agents, automation, and software solutions",
 }
 
 export function Features() {
   const [content, setContent] = useState<FeaturesContent>(defaultContent)
 
   useEffect(() => {
-    // Load content from localStorage
-    const savedContent = localStorage.getItem("skitbit-content")
+    // Load content from localStorage if available
+    const savedContent = localStorage.getItem("cygnuzai-content")
     if (savedContent) {
       try {
         const parsed = JSON.parse(savedContent)
@@ -40,44 +40,44 @@ export function Features() {
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {/* Adaptability Card - Hidden on mobile */}
-        <Card className="hidden md:block liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
+        {/* AI Agents Card */}
+        <Card className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-neutral-400">ADAPTABILITY</p>
-            <CardTitle className="mt-1 text-xl text-white">Make the experience truly intuitive</CardTitle>
+            <p className="text-[11px] tracking-widest text-neutral-400">AI AGENTS</p>
+            <CardTitle className="mt-1 text-xl text-white">
+              Intelligent agents that handle tasks autonomously
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
                 <Image
-                  src="/images/intuitive-1.png"
-                  alt="Close-up smartphone camera module on textured leather back"
+                  src="/images/ai-agent-1.png"
+                  alt="AI agent interface screenshot"
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 240px, 45vw"
-                  priority={false}
                 />
               </div>
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
                 <Image
-                  src="/images/intuitive-2.png"
-                  alt="Hand gripping textured phone back — macro detail"
+                  src="/images/ai-agent-2.png"
+                  alt="Workflow automation dashboard"
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 240px, 45vw"
-                  priority={false}
                 />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Client Love Card - Always visible */}
+        {/* Client Success Card */}
         <Card className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-neutral-400">CLIENT LOVE</p>
+            <p className="text-[11px] tracking-widest text-neutral-400">CLIENT SUCCESS</p>
             <CardTitle className="mt-1 text-xl text-white">
-              Their work didn't just look good, it moved the needle — our audience felt the difference instantly.
+              Our AI solutions helped clients save time, cut costs, and scale faster.
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -91,17 +91,17 @@ export function Features() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Image
-                src={"/images/top-rated-1.png"}
+                src={"/images/client-success-1.png"}
                 width={280}
                 height={160}
-                alt="Product sketch concepts of backpack on paper"
+                alt="Dashboard showing automated workflows"
                 className="h-full w-full rounded-xl border border-white/10 object-cover"
               />
               <Image
-                src={"/images/top-rated-2.png"}
+                src={"/images/client-success-2.png"}
                 width={280}
                 height={160}
-                alt="Backpacks on stage with Smartpack PRO lighting"
+                alt="Team reviewing AI agent results"
                 className="h-full w-full rounded-xl border border-white/10 object-cover"
               />
             </div>

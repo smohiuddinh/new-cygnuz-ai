@@ -98,9 +98,9 @@ export default function RootLayout({
 
       <body>
         {/* Background Effect */}
-        <div className="fixed inset-0 z-0 bg-black">
+        <div className="fixed inset-0 z-0 bg-[#020B1A]">
           <Plasma
-            color="#84cc16"
+            color="#2563eb"   // blue-600
             speed={0.8}
             direction="forward"
             scale={1.5}

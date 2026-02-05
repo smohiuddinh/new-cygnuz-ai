@@ -33,8 +33,8 @@ export function SiteHeader() {
             <Image
               src="/cygnuz/cygnuzlogo.png"
               alt="Cygnuz AI logo"
-              width={22}
-              height={22}
+              width={42}
+              height={42}
               className="h-5 w-5"
             />
             <span className="font-semibold tracking-wide text-white">
