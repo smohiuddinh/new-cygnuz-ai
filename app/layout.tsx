@@ -8,10 +8,25 @@ import Plasma from "@/components/plasma"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+  title: "Cygnuz AI | AI Agents, Automation & Custom Software Solutions",
   description:
-    "From product launches to full-scale campaigns, Skitbit delivers 3D animation that's fast, consistent, and built to wow your audience.",
+    "Cygnuz AI is an AI automation agency providing AI agents, workflow automation, and custom AI-powered software solutions to help businesses scale faster.",
   generator: "v0.app",
+  metadataBase: new URL("https://cygnuzai.com"),
+  openGraph: {
+    title: "Cygnuz AI | AI Agents & Automation",
+    description:
+      "Build intelligent AI agents, automate workflows, and deploy custom AI solutions with Cygnuz AI.",
+    url: "https://cygnuzai.com",
+    siteName: "Cygnuz AI",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cygnuz AI | AI Automation Agency",
+    description:
+      "AI agents, automation & custom software solutions for modern businesses.",
+  },
 }
 
 export default function RootLayout({
@@ -32,27 +47,32 @@ export default function RootLayout({
           fetchPriority="high"
         />
 
-        {/* Dynamic Favicon Script */}
+        {/* Dynamic Favicon */}
         <Script id="dynamic-favicon" strategy="beforeInteractive">
           {`
             function updateFavicon() {
               const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const faviconHref = darkMode ? '/icons/skitbit-white.svg' : '/icons/favicon-dark.svg';
+              const faviconHref = darkMode
+                ? '/icons/cygnuzai-white.svg'
+                : '/icons/cygnuzai-dark.svg';
+
               let link = document.querySelector("link[rel~='icon']");
               if (!link) {
                 link = document.createElement('link');
                 link.rel = 'icon';
-                document.getElementsByTagName('head')[0].appendChild(link);
+                document.head.appendChild(link);
               }
               link.href = faviconHref;
             }
+
             updateFavicon();
-            // Listen for changes in theme
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+            window
+              .matchMedia('(prefers-color-scheme: dark)')
+              .addEventListener('change', updateFavicon);
           `}
         </Script>
 
-        {/* Google Tag Manager (deferred) */}
+        {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -61,8 +81,11 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-NFLHXXGK');`}
         </Script>
 
-        {/* Google Analytics (deferred) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W6LV22900R" strategy="lazyOnload" />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-W6LV22900R"
+          strategy="lazyOnload"
+        />
         <Script id="gtag-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -72,17 +95,21 @@ export default function RootLayout({
           `}
         </Script>
       </head>
+
       <body>
+        {/* Background Effect */}
         <div className="fixed inset-0 z-0 bg-black">
           <Plasma
-            color="#8b5cf6"
+            color="#84cc16"
             speed={0.8}
             direction="forward"
             scale={1.5}
-            opacity={0.4}
-            mouseInteractive={true}
+            opacity={0.35}
+            mouseInteractive
           />
         </div>
+
+        {/* App Content */}
         <div className="relative z-10">{children}</div>
       </body>
     </html>

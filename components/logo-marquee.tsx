@@ -7,27 +7,20 @@ import Image from "next/image"
 export function LogoMarquee() {
   const [pausedRow, setPausedRow] = useState<string | null>(null)
 
-  // Logo data with colors and content
   const logos = [
-    { name: "Intel", content: "intel", color: "text-neutral-300" },
-    { name: "MongoDB", content: "🟢", color: "text-green-500" },
-    { name: "Skitbit", content: "image", color: "text-neutral-300", image: "/images/skitbit-subtle-logo.png" },
-    { name: "VK", content: "VK", color: "text-white", bg: "bg-blue-500" },
-    { name: "TechCrunch", content: "TC", color: "text-neutral-300" },
-    { name: "MailChimp", content: "🐵", color: "text-yellow-500" },
-    { name: "ESJ", content: "image", color: "text-neutral-300", image: "/images/esj-subtle-logo.png" },
-    { name: "Kickstarter", content: "K", color: "text-white", bg: "bg-green-500" },
+    { name: "Engro", content: "engro", color: "text-neutral-300" ,image: "/cygnuz/engro.png"},
+    { name: "Ehive", content: "ehive", color: "text-neutral-300", image: "/cygnuz/ehive.png" },
+    { name: "PalmCare", content: "palmcare", color: "text-neutral-300", image: "/cygnuz/palmcare.webp"  },
+    { name: "Suhaib", content: "S", color: "text-neutral-300", image: "/cygnuz/suhaib.png"  },
+    { name: "Legerium", content: "L", color: "text-neutral-300", image: "/cygnuz/logo_bg.png"  },
+
   ]
 
   const secondRowLogos = [
-    { name: "StumbleUpon", content: "🔴", color: "text-red-500" },
-    { name: "Microsoft", content: "⊞", color: "text-neutral-400" },
-    { name: "CleanMyMac", content: "🌈", color: "text-purple-400" },
-    { name: "Google", content: "G", color: "text-neutral-300" },
-    { name: "Behance", content: "Be", color: "text-white", bg: "bg-blue-500" },
-    { name: "Apple", content: "🍎", color: "text-neutral-300" },
-    { name: "TransferWise", content: "✓", color: "text-white", bg: "bg-green-500" },
-    { name: "Medium", content: "M", color: "text-neutral-300" },
+    { name: "Ecosaathi", content: "ecosaathi", color: "text-neutral-300", image: "/cygnuz/ecosaathi.png" },
+    { name: "UrEwaste", content: "S", color: "text-neutral-300", image: "/cygnuz/urewaste.png"  },
+    { name: "Terminix", content: "terminix", color: "text-neutral-300", image: "/cygnuz/terminix.png" },
+    { name: "Infinitely Digital", content: "infinitely-digital", color: "text-neutral-300", image: "/cygnuz/infinitely.png" },
   ]
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (

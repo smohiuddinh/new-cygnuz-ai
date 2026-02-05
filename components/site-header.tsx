@@ -1,18 +1,27 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import Image from "next/image"
-import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react"
+import {
+  Menu,
+  Bot,
+  Cpu,
+  Tag,
+  HelpCircle,
+  FileText,
+  Info,
+} from "lucide-react"
 
 export function SiteHeader() {
   const links = [
-    { href: "/", label: "Home", icon: Briefcase },
+    { href: "/", label: "Home", icon: Cpu },
+    { href: "#services", label: "AI Services", icon: Bot },
     { href: "#pricing", label: "Pricing", icon: Tag },
-    { href: "faq", label: "FAQ", icon: HelpCircle },
-    { href: "#blog", label: "Blog", icon: FileText },
-    { href: "About", label: "About", icon: Info },
+    { href: "/faq", label: "FAQ", icon: HelpCircle },
+    { href: "/blog", label: "Blog", icon: FileText },
+    { href: "/about", label: "About", icon: Info },
   ]
 
   return (
@@ -20,15 +29,17 @@ export function SiteHeader() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-1.5">
+          <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/icons/skitbit-white.svg"
-              alt="Skitbit logo"
-              width={20}
-              height={20}
+              src="/cygnuz/cygnuzlogo.png"
+              alt="Cygnuz AI logo"
+              width={22}
+              height={22}
               className="h-5 w-5"
             />
-            <span className="font-semibold tracking-wide text-white">Skitbit</span>
+            <span className="font-semibold tracking-wide text-white">
+              Cygnuz AI
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -37,7 +48,7 @@ export function SiteHeader() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="hover:text-purple-300 transition-colors"
+                className="hover:text-lime-300 transition-colors"
               >
                 {l.label}
               </Link>
@@ -52,7 +63,7 @@ export function SiteHeader() {
                          hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
                          transition-all"
             >
-              <Link href="#contact">Chat With Us</Link>
+              <Link href="#contact">Talk to an AI Expert</Link>
             </Button>
           </div>
 
@@ -69,20 +80,23 @@ export function SiteHeader() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
+
               <SheetContent
                 side="right"
                 className="liquid-glass border-gray-800 p-0 w-64 flex flex-col"
               >
                 {/* Brand Header */}
-                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
+                <div className="flex items-center gap-2 px-4 py-4 border-b border-gray-800">
                   <Image
-                    src="/icons/skitbit-white.svg"
-                    alt="Skitbit logo"
-                    width={24}
-                    height={24}
+                    src="/icons/cygnuzai-white.svg"
+                    alt="Cygnuz AI logo"
+                    width={26}
+                    height={26}
                     className="h-6 w-6"
                   />
-                  <span className="font-semibold tracking-wide text-white text-lg">Skitbit</span>
+                  <span className="font-semibold tracking-wide text-white text-lg">
+                    Cygnuz AI
+                  </span>
                 </div>
 
                 {/* Nav Links */}
@@ -91,7 +105,8 @@ export function SiteHeader() {
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-purple-300 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3
+                                 hover:bg-gray-900 hover:text-lime-300 transition-colors"
                     >
                       <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
                         <l.icon className="h-4 w-4" />
@@ -101,7 +116,7 @@ export function SiteHeader() {
                   ))}
                 </nav>
 
-                {/* CTA Button at Bottom */}
+                {/* CTA Button */}
                 <div className="mt-auto border-t border-gray-800 p-4">
                   <Button
                     asChild
@@ -109,7 +124,9 @@ export function SiteHeader() {
                                hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
                                transition-all"
                   >
-                    <Link href="https://wa.link/65mf3i">Get a Quote</Link>
+                    <Link href="https://wa.link/65mf3i">
+                      Get AI Automation Quote
+                    </Link>
                   </Button>
                 </div>
               </SheetContent>

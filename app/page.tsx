@@ -11,72 +11,92 @@ export const dynamic = "force-static"
 
 export default function Page() {
   // Structured data for pricing
-  const pricingStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPageElement",
-    "@id": "https://theskitbit.com/#pricing",
-    name: "Pricing Plans",
-    description: "3D Animation pricing plans - Startup, Pro, and Premium packages for all business needs",
-    url: "https://theskitbit.com/#pricing",
-    mainEntity: {
-      "@type": "PriceSpecification",
-      name: "3D Animation Services",
-      description: "Professional 3D animation services with three pricing tiers",
-      offers: [
-        {
-          "@type": "Offer",
-          name: "Startup Plan",
-          price: "299",
-          priceCurrency: "USD",
-          description: "Up to 15s 3D Animation with 2 revisions",
-        },
-        {
-          "@type": "Offer",
-          name: "Pro Plan",
-          price: "699",
-          priceCurrency: "USD",
-          description: "Up to 25s 3D Animation with 4 revisions",
-        },
-        {
-          "@type": "Offer",
-          name: "Premium Plan",
-          price: "2049",
-          priceCurrency: "USD",
-          description: "40-60s 3D Animation with unlimited revisions",
-        },
-      ],
-    },
-  }
-
-  // Structured data for main page
-  const pageStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://theskitbit.com/",
-    name: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+ const pricingStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "https://cygnuzai.com/#pricing",
+  name: "Cygnuz AI Pricing Plans",
+  description:
+    "Flexible pricing plans for AI agents, business automation, and custom AI-powered software solutions.",
+  url: "https://cygnuzai.com/#pricing",
+  mainEntity: {
+    "@type": "OfferCatalog",
+    name: "Cygnuz AI Services",
     description:
-      "From product launches to full-scale campaigns, Skitbit delivers 3D animation that’s fast, consistent, and built to wow your audience.",
-    url: "https://theskitbit.com/",
-    mainEntity: {
-      "@type": "Organization",
-      name: "Skitbit",
-      url: "https://theskitbit.com",
-      sameAs: [
-        "https://twitter.com/theskitbit",
-        "https://www.youtube.com/@skitbitinternational",
-        "https://instagram.com/theskitbit",
-        "https://threads.com/theskitbit",
-      ],
-    },
-    hasPart: [
+      "AI automation, AI agents, workflow automation, and custom software development services",
+    itemListElement: [
       {
-        "@type": "WebPageElement",
-        "@id": "https://theskitbit.com/#pricing",
-        name: "Pricing Section",
-        url: "https://theskitbit.com/#pricing",
+        "@type": "Offer",
+        name: "Starter Automation Plan",
+        price: "499",
+        priceCurrency: "USD",
+        description:
+          "Basic AI automation setup, 1 AI agent, workflow automation, and limited integrations.",
+      },
+      {
+        "@type": "Offer",
+        name: "Business AI Plan",
+        price: "1499",
+        priceCurrency: "USD",
+        description:
+          "Advanced AI agents, CRM & customer support automation, API integrations, and priority support.",
+      },
+      {
+        "@type": "Offer",
+        name: "Enterprise AI Solution",
+        price: "Custom",
+        priceCurrency: "USD",
+        description:
+          "Custom-built AI agents, end-to-end automation, scalable AI infrastructure, and bespoke software solutions.",
       },
     ],
-  }
+  },
+};
+
+
+  // Structured data for main page
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://cygnuzai.com/",
+  name: "Cygnuz AI | AI Agents, Automation & Custom Software Solutions",
+  description:
+    "Cygnuz AI is an AI automation agency providing AI agents, business process automation, and custom AI-powered software solutions to help companies scale efficiently.",
+  url: "https://cygnuzai.com/",
+  mainEntity: {
+    "@type": "Organization",
+    name: "Cygnuz AI",
+    url: "https://cygnuzai.com",
+    logo: "https://cygnuzai.com/logo.png",
+    sameAs: [
+      "https://www.linkedin.com/company/cygnuzai",
+      "https://twitter.com/cygnuzai",
+      "https://www.instagram.com/cygnuzai",
+      "https://www.youtube.com/@cygnuzai"
+    ],
+  },
+  hasPart: [
+    {
+      "@type": "WebPageElement",
+      "@id": "https://cygnuzai.com/#services",
+      name: "AI Services Section",
+      url: "https://cygnuzai.com/#services",
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://cygnuzai.com/#pricing",
+      name: "Pricing Plans",
+      url: "https://cygnuzai.com/#pricing",
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://cygnuzai.com/#contact",
+      name: "Contact Section",
+      url: "https://cygnuzai.com/#contact",
+    },
+  ],
+};
+
 
   return (
     <>
