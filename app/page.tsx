@@ -6,7 +6,6 @@ import { Pricing } from "@/components/pricing"
 import { AppverseFooter } from "@/components/appverse-footer"
 import Script from "next/script"
 
-// ✅ Force static generation for low TTFB
 export const dynamic = "force-static"
 
 export default function Page() {
