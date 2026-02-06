@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
@@ -22,66 +21,75 @@ export default function AdminLogin() {
     setError("")
     setIsLoading(true)
 
-    // Simple client-side authentication
     setTimeout(() => {
-      // Default credentials
+      // Admin credentials
       if (
-        (email === "admin@theskitbit.com" && password === "1234") ||
-        (email === "Addy@theskitbit.com" && password === "1234")
+        (email === "admin@cygnuzai.com" && password === "1234") ||
+        (email === "founder@cygnuzai.com" && password === "1234")
       ) {
-        // Set a cookie that expires in 24 hours
         const expiryDate = new Date()
         expiryDate.setTime(expiryDate.getTime() + 24 * 60 * 60 * 1000)
+
         document.cookie = `admin-session=authenticated; path=/; expires=${expiryDate.toUTCString()}`
         router.push("/admin")
       } else {
         setError("Invalid email or password")
       }
+
       setIsLoading(false)
     }, 1000)
   }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex flex-col md:flex-row">
-      {/* Left side - only visible on desktop */}
-      <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-purple-600 to-blue-600 p-12 flex-col justify-between">
+      {/* Left Panel */}
+      <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-lime-400 to-emerald-500 p-12 flex-col justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">SK</span>
+            <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+              <span className="text-lime-300 font-bold text-lg">CA</span>
             </div>
-            <span className="text-2xl font-semibold text-white">Skitbit</span>
+            <span className="text-2xl font-semibold text-black">Cygnuz AI</span>
           </div>
-          <h1 className="text-4xl font-bold text-white mt-12">Welcome to Skitbit Admin</h1>
-          <p className="text-purple-100 mt-4 max-w-md">
-            Manage your website content, pricing, and settings from one central dashboard.
+
+          <h1 className="text-4xl font-bold text-black mt-12">
+            Cygnuz AI Admin Panel
+          </h1>
+          <p className="text-black/80 mt-4 max-w-md">
+            Manage AI agents, automation workflows, client systems, and platform
+            settings from one secure dashboard.
           </p>
         </div>
+
         <div className="mt-auto">
           <Image
             src="/images/admin-cover.png"
-            alt="Admin Dashboard"
+            alt="Cygnuz AI Dashboard"
             width={500}
             height={300}
-            className="rounded-xl shadow-lg"
+            className="rounded-xl shadow-xl"
           />
         </div>
       </div>
 
-      {/* Right side - login form */}
+      {/* Right Panel */}
       <div className="flex-1 flex flex-col items-center justify-center p-6 md:p-12">
-        {/* Mobile header - only visible on mobile */}
+        {/* Mobile Header */}
         <div className="flex md:hidden items-center gap-3 mb-8 w-full">
           <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-black font-bold text-lg">SK</span>
+            <span className="text-black font-bold text-lg">CA</span>
           </div>
-          <span className="text-2xl font-semibold text-white">Skitbit</span>
+          <span className="text-2xl font-semibold text-white">Cygnuz AI</span>
         </div>
 
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white">Sign in to your account</h2>
-            <p className="text-neutral-400 mt-2">Enter your credentials to access the admin panel</p>
+            <h2 className="text-2xl font-bold text-white">
+              Sign in to Admin
+            </h2>
+            <p className="text-neutral-400 mt-2">
+              Access the Cygnuz AI management dashboard
+            </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
@@ -101,7 +109,7 @@ export default function AdminLogin() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@theskitbit.com"
+                placeholder="admin@cygnuzai.com"
                 className="bg-[#1a1a1a] border-neutral-800 text-white"
                 required
               />
@@ -112,7 +120,10 @@ export default function AdminLogin() {
                 <Label htmlFor="password" className="text-neutral-200">
                   Password
                 </Label>
-                <button type="button" className="text-sm text-[#C6FF3A] hover:underline">
+                <button
+                  type="button"
+                  className="text-sm text-lime-300 hover:underline"
+                >
                   Forgot password?
                 </button>
               </div>
@@ -127,10 +138,14 @@ export default function AdminLogin() {
               />
             </div>
 
-            <Button type="submit" disabled={isLoading} className="w-full bg-[#C6FF3A] text-black hover:bg-[#C6FF3A]/90">
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-lime-300 text-black hover:bg-lime-200"
+            >
               {isLoading ? (
                 <>
-                  <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin mr-2"></div>
+                  <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin mr-2" />
                   Signing in...
                 </>
               ) : (
@@ -142,8 +157,11 @@ export default function AdminLogin() {
           <div className="mt-8 text-center">
             <p className="text-neutral-400 text-sm">
               Need help? Contact{" "}
-              <a href="mailto:support@theskitbit.com" className="text-[#C6FF3A] hover:underline">
-                support@theskitbit.com
+              <a
+                href="mailto:support@cygnuzai.com"
+                className="text-lime-300 hover:underline"
+              >
+                cygnuzai@gmail.com
               </a>
             </p>
           </div>
