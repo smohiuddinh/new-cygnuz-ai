@@ -52,7 +52,7 @@ export function Features() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
                 <Image
-                  src="/images/ai-agent-1.png"
+                  src="/cygnuz-about/f1.png"
                   alt="AI agent interface screenshot"
                   fill
                   className="object-cover"
@@ -61,7 +61,7 @@ export function Features() {
               </div>
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
                 <Image
-                  src="/images/ai-agent-2.png"
+                  src="/cygnuz-about/f3.png"
                   alt="Workflow automation dashboard"
                   fill
                   className="object-cover"
@@ -91,14 +91,14 @@ export function Features() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Image
-                src={"/images/client-success-1.png"}
+                src={"/cygnuz-about/f5.png"}
                 width={280}
                 height={160}
                 alt="Dashboard showing automated workflows"
                 className="h-full w-full rounded-xl border border-white/10 object-cover"
               />
               <Image
-                src={"/images/client-success-2.png"}
+                src={"/cygnuz-about/f7.jpeg"}
                 width={280}
                 height={160}
                 alt="Team reviewing AI agent results"
