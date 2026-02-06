@@ -124,7 +124,7 @@ export function SiteHeader() {
                                hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
                                transition-all"
                   >
-                    <Link href="https://wa.link/65mf3i">
+                    <Link href="https://api.whatsapp.com/send?phone=923366655786&text=Hi%20I%20came%20acrross%20your%20website%20and%20I%27m%20looking%20for...">
                       Get AI Automation Quote
                     </Link>
                   </Button>
